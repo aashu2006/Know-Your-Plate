@@ -1,0 +1,96 @@
+.nutrition-summary-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.nutrition-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(11, 140, 72, 0.1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.nutrition-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0b8c48, #4caf50);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.nutrition-item:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(11, 140, 72, 0.15);
+  border-color: rgba(11, 140, 72, 0.3);
+}
+
+.nutrition-item:hover::before {
+  transform: scaleX(1);
+}
+
+.nutrition-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0b8c48;
+  margin-bottom: 0.25rem;
+}
+
+.nutrition-unit {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  margin-left: 0.25rem;
+}
+
+.nutrition-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dark-mode .nutrition-item {
+  background: linear-gradient(135deg, #2a2a2a 0%, #333 100%);
+  border-color: rgba(11, 140, 72, 0.3);
+}
+
+.dark-mode .nutrition-label {
+  color: #aaa;
+}
+
+.dark-mode .nutrition-unit {
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .nutrition-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .nutrition-value {
+    font-size: 1.5rem;
+  }
+}
+

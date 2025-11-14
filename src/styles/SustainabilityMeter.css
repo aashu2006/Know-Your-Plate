@@ -1,0 +1,61 @@
+.sustainability-meter-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.meter-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.meter-chart {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.meter-chart:hover {
+  transform: scale(1.05);
+}
+
+.meter-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.meter-grade {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.meter-percent {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .meter-chart {
+    width: 200px;
+    height: 200px;
+  }
+
+  .meter-grade {
+    font-size: 2.5rem;
+  }
+
+  .meter-percent {
+    font-size: 1.25rem;
+  }
+}
+
